@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bc5he13jlw126"]
+[gd_scene load_steps=7 format=3 uid="uid://bc5he13jlw126"]
 
+[ext_resource type="Script" path="res://scenes/levels/work_in_progress.gd" id="1_b32yb"]
 [ext_resource type="Script" path="res://player/CharacterBody2D.gd" id="1_xfyfb"]
 [ext_resource type="Texture2D" uid="uid://dwxrelkcmowod" path="res://icon.svg" id="1_yfevc"]
+[ext_resource type="PackedScene" uid="uid://ex3yyonlwlei" path="res://UI/pause_menu.tscn" id="4_bbguj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2dx3s"]
 size = Vector2(130, 128)
@@ -9,7 +11,8 @@ size = Vector2(130, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ck5yf"]
 size = Vector2(157, 122)
 
-[node name="work_in_progress" type="Node2D"]
+[node name="work_in_progress_pause" type="Node2D"]
+script = ExtResource("1_b32yb")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(200, 200)
@@ -33,3 +36,6 @@ shape = SubResource("RectangleShape2D_ck5yf")
 position = Vector2(600.5, 399.5)
 scale = Vector2(1.13281, 0.820312)
 texture = ExtResource("1_yfevc")
+
+[node name="Pause Menu" parent="." instance=ExtResource("4_bbguj")]
+visible = false

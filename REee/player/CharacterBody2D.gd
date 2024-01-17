@@ -18,8 +18,8 @@ func _physics_process(delta):
 
 #after the character is moved clamp its position to the end of the camera bounds
 
-	
 
 
 
-	
+
+

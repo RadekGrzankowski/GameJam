@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://ex3yyonlwlei"]
+
+[ext_resource type="Shader" path="res://UI/pause_menu.gdshader" id="1_et37d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wmh16"]
+shader = ExtResource("1_et37d")
+shader_parameter/amount = 3.09
+
+[node name="Pause Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_wmh16")
+layout_mode = 2
+offset_left = -1.0
+offset_right = 1149.0
+offset_bottom = 653.0
+color = Color(0.305882, 0.333333, 0.415686, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 494.0
+offset_top = 263.0
+offset_right = 726.0
+offset_bottom = 365.0
+
+[node name="Resume" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Resume"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
