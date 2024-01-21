@@ -1,9 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://bc5he13jlw126"]
+[gd_scene load_steps=15 format=3 uid="uid://bc5he13jlw126"]
 
 [ext_resource type="Script" path="res://scenes/levels/work_in_progress.gd" id="1_b32yb"]
 [ext_resource type="Script" path="res://player/CharacterBody2D.gd" id="1_xfyfb"]
 [ext_resource type="Texture2D" uid="uid://dwxrelkcmowod" path="res://icon.svg" id="1_yfevc"]
+[ext_resource type="Texture2D" uid="uid://b6gvd0j23orqa" path="res://image.png" id="2_g01pa"]
+[ext_resource type="Script" path="res://scenes/levels/PointLight2D.gd" id="3_61mct"]
+[ext_resource type="Script" path="res://scenes/levels/Area2D.gd" id="3_onkso"]
 [ext_resource type="PackedScene" uid="uid://ex3yyonlwlei" path="res://UI/pause_menu.tscn" id="4_bbguj"]
+
+[sub_resource type="Gradient" id="Gradient_4jmqa"]
+offsets = PackedFloat32Array(0.0797546, 0.711656)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vlyx1"]
+gradient = SubResource("Gradient_4jmqa")
+fill = 1
+fill_from = Vector2(0.482906, 0.470085)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2dx3s"]
 size = Vector2(130, 128)
@@ -11,10 +23,36 @@ size = Vector2(130, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ck5yf"]
 size = Vector2(157, 122)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_i4lex"]
+radius = 22.5777
+
+[sub_resource type="Gradient" id="Gradient_kjer4"]
+offsets = PackedFloat32Array(0, 0.638037)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_r2c30"]
+gradient = SubResource("Gradient_kjer4")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="work_in_progress_pause" type="Node2D"]
 script = ExtResource("1_b32yb")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(185, 355)
+texture = ExtResource("2_g01pa")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Image"]
+position = Vector2(-173, 201)
+scale = Vector2(3.75781, 3.91406)
+color = Color(0.615686, 0.113725, 0, 1)
+energy = 3.0
+texture = SubResource("GradientTexture2D_vlyx1")
+
+[node name="Pause Menu" parent="." instance=ExtResource("4_bbguj")]
+visible = false
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
 position = Vector2(200, 200)
 script = ExtResource("1_xfyfb")
 
@@ -22,6 +60,7 @@ script = ExtResource("1_xfyfb")
 texture = ExtResource("1_yfevc")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_2dx3s")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
@@ -37,5 +76,21 @@ position = Vector2(600.5, 399.5)
 scale = Vector2(1.13281, 0.820312)
 texture = ExtResource("1_yfevc")
 
-[node name="Pause Menu" parent="." instance=ExtResource("4_bbguj")]
-visible = false
+[node name="Area2D" type="Area2D" parent="." groups=["light"]]
+position = Vector2(200, 550)
+scale = Vector2(4.17969, 3.84375)
+script = ExtResource("3_onkso")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_i4lex")
+
+[node name="PointLight2D" type="PointLight2D" parent="Area2D"]
+position = Vector2(0.418692, 0)
+scale = Vector2(1, 1)
+color = Color(0.517647, 0.129412, 0.176471, 1)
+energy = 3.0
+texture = SubResource("GradientTexture2D_r2c30")
+script = ExtResource("3_61mct")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

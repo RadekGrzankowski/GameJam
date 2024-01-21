@@ -14,12 +14,5 @@ func _physics_process(delta):
 	move_and_slide()
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
-
-
-#after the character is moved clamp its position to the end of the camera bounds
-
-
-
-
-
+	
 

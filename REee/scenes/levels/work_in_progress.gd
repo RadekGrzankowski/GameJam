@@ -17,3 +17,5 @@ func pauseMenu():
 		Engine.time_scale = 0
 	
 	paused = !paused
+
+
