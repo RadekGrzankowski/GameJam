@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ex3yyonlwlei"]
+[gd_scene load_steps=4 format=3 uid="uid://ex3yyonlwlei"]
 
 [ext_resource type="Shader" path="res://UI/pause_menu.gdshader" id="1_et37d"]
+[ext_resource type="Script" path="res://UI/Resume.gd" id="2_mifun"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wmh16"]
 shader = ExtResource("1_et37d")
@@ -42,6 +43,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Resume"
+script = ExtResource("2_mifun")
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
