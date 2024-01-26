@@ -1,7 +1,7 @@
 extends Control
 
 func _on_play_pressed(): 
- get_tree().change_scene_to_file("res://scenes/levels/work_in_progress.tscn")
+ get_tree().change_scene_to_file("res://examples/scenes/2d/example1/Example1.tscn")
 
 
 func _on_options_pressed():	

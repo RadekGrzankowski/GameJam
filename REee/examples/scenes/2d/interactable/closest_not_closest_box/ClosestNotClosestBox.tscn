@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqgdiqyalg1yr"]
+
+[ext_resource type="Script" path="res://examples/scenes/2d/interactable/closest_not_closest_box/ClosestNotClosestBox.gd" id="1_n0b0w"]
+
+[sub_resource type="Gradient" id="Gradient_0gsfv"]
+offsets = PackedFloat32Array(0, 0.697959)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mx7wm"]
+gradient = SubResource("Gradient_0gsfv")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xb12"]
+
+[node name="ClosestNotClosestBox" type="Area2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_n0b0w")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.517647, 0.129412, 0.176471, 1)
+energy = 3.0
+texture = SubResource("GradientTexture2D_mx7wm")
+texture_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_1xb12")
+
+[connection signal="closest" from="." to="." method="_on_closest"]
+[connection signal="interacted" from="." to="." method="_on_interacted"]
+[connection signal="not_closest" from="." to="." method="_on_not_closest"]
