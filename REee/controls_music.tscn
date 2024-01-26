@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://i7i3ix0vme58"]
+
+[node name="Controls_Music" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Master" type="HSlider" parent="."]
+layout_mode = 2
+offset_left = 398.0
+offset_top = 298.0
+offset_right = 647.0
+offset_bottom = 314.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+
+[node name="Music" type="HSlider" parent="."]
+layout_mode = 2
+anchor_left = 4.101
+anchor_top = -1.007
+anchor_right = 4.101
+anchor_bottom = -1.007
+offset_left = -4326.35
+offset_top = 1005.54
+offset_right = -4076.35
+offset_bottom = 1021.54
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+
+[node name="SFX" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 409.0
+offset_right = 649.0
+offset_bottom = 428.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+
+[node name="Master3" type="Label" parent="."]
+layout_mode = 2
+offset_left = 441.0
+offset_top = 263.0
+offset_right = 581.0
+offset_bottom = 290.0
+size_flags_horizontal = 4
+text = "Master volume"
+horizontal_alignment = 1
+max_lines_visible = 3
+visible_characters = 13
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 319.0
+offset_right = 573.0
+offset_bottom = 342.0
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 374.0
+offset_right = 581.0
+offset_bottom = 406.0
+text = "Sound Effects"
+horizontal_alignment = 1

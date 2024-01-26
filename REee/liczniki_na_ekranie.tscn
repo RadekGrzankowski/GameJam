@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfbf6lgge3jcw"]
+
+[ext_resource type="Script" path="res://liczniki_na_ekranie.gd" id="1_16ofq"]
+[ext_resource type="Script" path="res://global.gd" id="2_m8h3r"]
+
+[node name="Liczniki na ekranie" type="Node2D"]
+position = Vector2(1741, 87)
+script = ExtResource("1_16ofq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -187.0
+offset_top = 32.0
+offset_right = -33.0
+offset_bottom = 78.0
+grow_horizontal = 0
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/PanelContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Pesents"
+uppercase = true
+visible_characters = 6
+
+[node name="Pesents" type="Label" parent="CanvasLayer/PanelContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+vertical_alignment = 1
+max_lines_visible = 100
+script = ExtResource("2_m8h3r")
