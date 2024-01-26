@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://cbp03xj0gbnkf"]
+[gd_scene format=3 uid="uid://b3ebcnvnfnrw6"]
 
-[node name="YouLost" type="Node2D"]
+[node name="YouWin" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1149.0
@@ -23,6 +23,7 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "YOU DED"
+text = "YOU WON!
+GOOD JOB"
 horizontal_alignment = 1
 vertical_alignment = 1
