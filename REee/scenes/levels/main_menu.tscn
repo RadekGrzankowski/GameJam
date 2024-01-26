@@ -10,7 +10,11 @@ position = Vector2(577, 329)
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
 
 [node name="Szkielet Menu" parent="." instance=ExtResource("1_te435")]
-offset_left = 39.0
-offset_top = 45.0
-offset_right = 229.0
-offset_bottom = 317.0
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
