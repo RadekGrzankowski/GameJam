@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx3iycolquwwb"]
+
+[ext_resource type="Script" path="res://examples/scenes/2d/interactable/closest_not_closest_box/ClosestNotClosestBox1.gd" id="1_oofnq"]
+[ext_resource type="Texture2D" uid="uid://cv2xkgvhlj56e" path="res://Tilesets/Assets - NPC/Villager.png" id="2_31ybh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xb12"]
+size = Vector2(12.8, 11.6)
+
+[node name="ClosestNotClosestBox" type="Area2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_oofnq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9.53674e-07, -4.76837e-07)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_1xb12")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_31ybh")
+
+[connection signal="closest" from="." to="." method="_on_closest"]
+[connection signal="interacted" from="." to="." method="_on_interacted"]
+[connection signal="not_closest" from="." to="." method="_on_not_closest"]
