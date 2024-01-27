@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdeb0nrdbf3in"]
+[gd_scene load_steps=3 format=3 uid="uid://cdeb0nrdbf3in"]
 
 [ext_resource type="Script" path="res://UI/Szkielet Menu.gd" id="1_lrptj"]
+[ext_resource type="AudioStream" uid="uid://ymhceb0pspa7" path="res://Kurwa_szczerze..mp3" id="2_lo13s"]
 
 [node name="Szkielet Menu" type="Control"]
 layout_mode = 3
@@ -50,6 +51,10 @@ text = "Settings"
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Escape "
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_lo13s")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
